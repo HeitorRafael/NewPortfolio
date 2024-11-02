@@ -569,3 +569,112 @@ p {
     text-align: center;
     margin-bottom: 0.5rem;
 }
+
+.footer {
+    background: rgba(83, 92, 145, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 3rem 2rem;
+    margin-top: 4rem;
+}
+
+/* Seção de Skills */
+.skills-section {
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+}
+
+.skills-section h2 {
+    text-align: center;
+    color: #9290C3;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+}
+
+.skill-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.skill-item span {
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+/* Seção de Contatos */
+.contacts-section {
+    border-top: 1px solid rgba(146, 144, 195, 0.2);
+    padding-top: 2rem;
+}
+
+.contacts-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+}
+
+.contact-item img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.contact-item span {
+    color: #9290C3;
+    font-size: 0.9rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .skills-container,
+    .contacts-container {
+        gap: 1.5rem;
+    }
+
+    .skill-item img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .contact-item img {
+        width: 25px;
+        height: 25px;
+    }
+}
