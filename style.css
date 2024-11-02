@@ -1,3 +1,22 @@
+:root {
+    /* Cores */
+    --color-primary: #9290C3;
+    --color-background: #070F2B;
+    --color-white: #fff;
+    --color-button: #2369FF;
+    --color-glass: rgba(83, 92, 145, 0.1);
+    --color-glass-dark: rgba(83, 92, 145, 0.25);
+    
+    /* Efeitos */
+    --glass-blur: blur(8px);
+    --transition-hover: transform 0.3s ease;
+    --box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    
+    /* Z-index */
+    --z-index-header: 1000;
+}
+
+/* Reset e estilos base */
 * {
     margin: 0;
     padding: 0;
@@ -5,28 +24,39 @@
 }
 
 body {
-    background-color: #070F2B;
+    background-color: var(--color-background);
 }
 
-:root {
-    --z-index-header: 1000;
+/* Mixins comuns */
+.glass-effect {
+    background: var(--color-glass);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border-radius: 20px;
 }
 
+.hover-lift {
+    transition: var(--transition-hover);
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+}
+
+/* Header */
 header {
     z-index: var(--z-index-header);
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    box-shadow: var(--box-shadow);
+    background-color: var(--color-glass-dark);
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(83, 92, 145, 0.25);
-    backdrop-filter: blur(15px);
     padding: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @extend .glass-effect;
 }
 
 nav ul {
