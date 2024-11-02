@@ -5,13 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
+    <script src="/script.js" defer></script>
     <title>Portifolio Heitor Delfino</title>
 </head>
 
 <body>
     <header>
         <nav>
-            <ul>
+            <!-- Hamburger só aparece em mobile -->
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <!-- Menu de navegação -->
+            <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -23,7 +31,7 @@
 
 
     <main class="presentation">
-        <div class="content">
+        <div id="home" class="content">
             <img src="/assets/Selfie.png" alt="Foto de Heitor" class="profile-pic">
             <h2>PORTFOLIO</h2>
             <h1>Heitor Rafael B. Delfino</h1>
@@ -217,7 +225,7 @@
 
     <footer class="footer">
         <!-- Seção de Skills -->
-        <section class="skills-section">
+        <section id="skills" class="skills-section">
             <h2>Skills</h2>
             <div class="skills-container">
                 <div class="skill-item">
@@ -254,11 +262,11 @@
                     <img src="/assets/linkedin.png" alt="LinkedIn">
                     <span>LinkedIn</span>
                 </a>
-                <a href="https://www.instagram.com/seu-perfil" target="_blank" class="contact-item">
+                <a href="https://www.instagram.com/heitor_raffino/" target="_blank" class="contact-item">
                     <img src="/assets/instagram.png" alt="Instagram">
                     <span>Instagram</span>
                 </a>
-                <a href="https://github.com/seu-perfil" target="_blank" class="contact-item">
+                <a href="https://github.com/HeitorRafael" target="_blank" class="contact-item">
                     <img src="/assets/github.png" alt="GitHub">
                     <span>GitHub</span>
                 </a>
