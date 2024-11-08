@@ -299,6 +299,58 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Atualizar a imagem de languages no carregamento
-    updateLanguagesImage();
+    // Adicione esta função no seu JavaScript
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                
+                // Se estiver no mobile, fecha o menu
+                const hamburger = document.querySelector('.hamburger');
+                const navMenu = document.querySelector('.nav-menu');
+                if (window.innerWidth <= 768) {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            }
+        });
+    });
+
+    // Configuração do Intersection Observer
+    const options = {
+        root: null, // usa o viewport
+        rootMargin: '0px',
+        threshold: 0.1 // 10% do elemento precisa estar visível
+    };
+
+    // Callback quando o elemento entra/sai da view
+    const handleIntersect = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                // Opcional: parar de observar após a animação
+                // observer.unobserve(entry.target);
+            }
+            // Opcional: remover classe quando sair da view
+            // else {
+            //     entry.target.classList.remove('visible');
+            // }
+        });
+    };
+
+    // Criar o observer
+    const observer = new IntersectionObserver(handleIntersect, options);
+
+    // Observar todos os elementos com animações
+    const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .slide-in-top');
+    animatedElements.forEach(el => observer.observe(el));
 });

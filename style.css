@@ -1,3 +1,8 @@
+/* Adicione isso no início do seu CSS */
+html {
+    scroll-behavior: smooth; /* Isso faz toda a navegação ser suave */
+}
+
 :root {
     /* Cores */
     --color-primary: #9290C3;
@@ -1125,4 +1130,132 @@ h1, h2, h3, h4, p,
     .languages-container img {
         width: 95%; /* Ajuste fino para telas muito pequenas */
     }
+}
+
+/* Animações gerais */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInFromLeft {
+    from { 
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Aplicando as animações */
+.content {
+    animation: fadeIn 1s ease-out;
+}
+
+.about-content {
+    animation: slideInFromLeft 1s ease-out;
+}
+
+.projects-container {
+    animation: slideInFromRight 1s ease-out;
+}
+
+.skills-section {
+    animation: slideInFromLeft 1s ease-out;
+}
+
+/* Transições suaves para mudanças de tema */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Transições para elementos interativos */
+.nav-menu a,
+.contact-btn,
+.project-card,
+.skill-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effects */
+.nav-menu a:hover,
+.contact-btn:hover {
+    transform: translateY(-2px);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.skill-item:hover {
+    transform: scale(1.05);
+}
+
+/* Classes de animação */
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 1s ease-out;
+}
+
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 1s ease-out;
+}
+
+.slide-in-top {
+    opacity: 0;
+    transform: translateY(-100px);
+    transition: all 1s ease-out;
+}
+
+/* Classes para quando o elemento está visível */
+.fade-in.visible {
+    opacity: 1;
+}
+
+.slide-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-in-top.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
