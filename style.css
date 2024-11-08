@@ -14,6 +14,18 @@
     
     /* Z-index */
     --z-index-header: 1000;
+    
+    /* Tema escuro (padrão) */
+    --bg-color: #070F2B;
+    --text-color: #9290C3;
+    --box-color: rgba(83, 92, 145, 0.1);
+}
+
+/* Tema claro */
+[data-theme="light"] {
+    --bg-color: #E9E9E9;
+    --text-color: #1F3B4D;
+    --box-color: #C1C7D0;
 }
 
 /* Reset e estilos base */
@@ -24,7 +36,8 @@
 }
 
 body {
-    background-color: var(--color-background);
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 /* Mixins comuns */
@@ -77,7 +90,6 @@ nav {
 
 .hamburger {
     display: none;
-    cursor: pointer;
 }
 
 .hamburger span {
@@ -92,6 +104,16 @@ nav {
 @media (max-width: 768px) {
     .hamburger {
         display: block;
+        cursor: pointer;
+    }
+
+    .hamburger span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px;
+        background-color: var(--text-color);
+        transition: 0.3s;
     }
 
     .nav-menu {
@@ -100,19 +122,15 @@ nav {
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: rgba(83, 92, 145, 0.95);
-        flex-direction: column;
-        padding: 1rem 0;
-        backdrop-filter: blur(10px);
+        background: var(--box-color);
+        text-align: center;
+        padding: 20px 0;
     }
 
     .nav-menu.active {
         display: flex;
-    }
-
-    .nav-menu li {
-        text-align: center;
-        padding: 1rem 0;
+        flex-direction: column;
+        gap: 1rem;
     }
 
     .hamburger.active span:nth-child(2) {
@@ -283,28 +301,39 @@ p {
 
 .projects-container {
     width: 100%;
-    overflow-x: hidden;
-    padding: 1rem 0;
+    overflow-x: auto;
+    padding: 20px 0;
 }
 
 .projects-wrapper {
     display: flex;
     gap: 2rem;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    padding: 1rem;
+    padding: 0 20px;
+    min-width: min-content;
 }
 
-/* Esconde a scrollbar mas mantém a funcionalidade */
-.projects-wrapper::-webkit-scrollbar {
-    display: none;
+.projects-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.projects-container::-webkit-scrollbar-track {
+    background: var(--box-color);
+    border-radius: 4px;
+}
+
+.projects-container::-webkit-scrollbar-thumb {
+    background: var(--text-color);
+    border-radius: 4px;
+}
+
+.projects-container::-webkit-scrollbar-thumb:hover {
+    background: var(--text-color);
+    opacity: 0.8;
 }
 
 .project-card {
     min-width: 300px;
-    max-width: 350px;
+    flex-shrink: 0;
     background: rgba(83, 92, 145, 0.1);
     border-radius: 12px;
     padding: 1rem;
@@ -756,5 +785,344 @@ p {
     .contact-item img {
         width: 25px;
         height: 25px;
+    }
+}
+
+/* Classe para tema claro */
+[data-theme="light"] {
+    --bg-color: #E9E9E9;
+    --text-color: #1F3B4D;
+    --box-color: #C1C7D0;
+}
+
+/* Aplicar variáveis */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Atualizar todas as referências de cor no seu CSS para usar as variáveis */
+
+/* Aplicando as cores */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Ajustando cores específicas */
+h1, h2, h3, h4, p, 
+.nav-menu a,
+.resume-text h3,
+.resume-text h4,
+.skill-item span,
+.contact-item span,
+.project-info h3,
+.project-info p,
+.project-links a,
+.about-content h2,
+.about-content p,
+.about-buttons .contact-btn,
+.resume-container h2,
+.resume-text,
+.resume-text p,
+.resume-text ul,
+.resume-text li,
+.job-experience p,
+.job-experience h4,
+.resume-text h3,
+.resume-text h4,
+.skills-section h2,
+.skill-item span,
+.contacts-section h2,
+.contact-item span {
+    color: var(--text-color);
+}
+
+/* Ajuste para o menu hamburguer */
+.hamburger span {
+    background-color: var(--text-color);
+}
+
+/* Ajuste para o menu mobile */
+@media (max-width: 768px) {
+    .nav-menu {
+        background-color: var(--box-color);
+    }
+}
+
+/* Ajustes específicos para projetos */
+.project-card {
+    background: var(--box-color);
+}
+
+.project-links a {
+    background: var(--box-color);
+    border: 1px solid var(--text-color);
+}
+
+.project-links a:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+}
+
+.projects-section h2 {
+    color: var(--text-color);
+}
+
+/* Ajustes específicos para About/Who Am I */
+.about-container {
+    background: var(--box-color);
+}
+
+.about-buttons .contact-btn {
+    background: var(--box-color);
+    border: 1px solid var(--text-color);
+}
+
+.about-buttons .contact-btn:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+}
+
+.about-buttons .linkedin {
+    background: var(--box-color);
+}
+
+.about-buttons .linkedin:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+}
+
+/* Ajustes específicos para Resume */
+.resume-container {
+    background: var(--box-color);
+}
+
+.resume-text::-webkit-scrollbar-track {
+    background: var(--box-color);
+}
+
+.resume-text::-webkit-scrollbar-thumb {
+    background: var(--text-color);
+    opacity: 0.5;
+}
+
+.resume-content::after {
+    background: linear-gradient(transparent, var(--box-color));
+}
+
+.resume-content::before {
+    background: linear-gradient(var(--box-color), transparent);
+}
+
+.character-container,
+.languages-container {
+    background: var(--box-color);
+}
+
+/* Ajustes específicos para Skills e Footer */
+.footer {
+    background: var(--box-color);
+}
+
+.skills-section h2 {
+    color: var(--text-color);
+}
+
+.skill-item span {
+    color: var(--text-color);
+}
+
+.contacts-section {
+    border-top: 1px solid var(--text-color);
+}
+
+.contact-item span {
+    color: var(--text-color);
+}
+
+/* Ajuste para o container de skills */
+.skills-container {
+    background: var(--box-color);
+    border-radius: 20px;
+    padding: 2rem;
+}
+
+/* Ajuste para os itens de skill individuais */
+.skill-item {
+    background: var(--box-color);
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--text-color);
+}
+
+.skill-item:hover {
+    background: var(--text-color);
+}
+
+.skill-item:hover span {
+    color: var(--bg-color);
+}
+
+.lang-toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.lang-toggle img {
+    width: 24px;
+    height: 24px;
+}
+
+.lang-text {
+    font-size: 12px;
+    color: var(--text-color);
+}
+
+/* Quando estiver no tema claro */
+[data-theme="light"] .lang-text {
+    color: #1F3B4D;
+}
+
+.theme-toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.theme-toggle img {
+    width: 24px;
+    height: 24px;
+}
+
+.theme-text {
+    font-size: 12px;
+    color: var(--text-color);
+}
+
+/* Quando estiver no tema claro */
+[data-theme="light"] .theme-text {
+    color: #1F3B4D;
+}
+
+/* Container para os botões */
+.theme-controls {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+/* Estilo base dos botões */
+.theme-toggle,
+.lang-toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none;
+    border: 2px solid var(--text-color);
+    border-radius: 12px;
+    padding: 10px 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Efeito de brilho */
+.theme-toggle::after,
+.lang-toggle::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    background: var(--text-color);
+    filter: blur(8px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+    border-radius: 16px;
+}
+
+/* Hover effect */
+.theme-toggle:hover::after,
+.lang-toggle:hover::after {
+    opacity: 0.5;
+}
+
+/* Estilo dos ícones */
+.theme-toggle img,
+.lang-toggle img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 6px;
+    transition: all 0.3s ease;
+}
+
+/* Estilo do texto */
+.theme-text,
+.lang-text {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+/* Tema claro */
+[data-theme="light"] .theme-toggle,
+[data-theme="light"] .lang-toggle {
+    border-color: #1F3B4D;
+}
+
+[data-theme="light"] .theme-text,
+[data-theme="light"] .lang-text {
+    color: #1F3B4D;
+}
+
+[data-theme="light"] .theme-toggle::after,
+[data-theme="light"] .lang-toggle::after {
+    background: #1F3B4D;
+}
+
+.languages-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.languages-container img {
+    width: 100%;
+    max-width: 800px; /* ou o tamanho máximo que você preferir */
+    height: auto;
+    object-fit: contain;
+}
+
+/* Media queries para diferentes tamanhos de tela */
+@media (max-width: 768px) {
+    .languages-container {
+        padding: 0.5rem;
+    }
+    
+    .languages-container img {
+        max-width: 100%;
+        width: 90%; /* Um pouco de margem nas laterais */
+    }
+}
+
+@media (max-width: 480px) {
+    .languages-container {
+        padding: 0.25rem;
+    }
+    
+    .languages-container img {
+        width: 95%; /* Ajuste fino para telas muito pequenas */
     }
 }

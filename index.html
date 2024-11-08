@@ -12,38 +12,38 @@
 <body>
     <header>
         <nav>
-            <!-- Hamburger só aparece em mobile -->
             <div class="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-            <!-- Menu de navegação -->
             <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
+                <li><a href="#home" data-translate="nav-home">Home</a></li>
+                <li><a href="#about" data-translate="nav-about">About</a></li>
+                <li><a href="#projects" data-translate="nav-projects">Projects</a></li>
+                <li><a href="#skills" data-translate="nav-skills">Skills</a></li>
             </ul>
         </nav>
-        <a href="https://wa.me/13997902633" target="_blank" class="contact-btn">Let's Talk</a>
+        <a href="https://wa.me/13997902633" target="_blank" class="contact-btn" data-translate="lets-talk">Let's Talk</a>
     </header>
 
 
     <main class="presentation">
         <div id="home" class="content">
             <img src="/assets/Selfie.png" alt="Foto de Heitor" class="profile-pic">
-            <h2>PORTFOLIO</h2>
+            <h2 data-translate="portfolio">PORTFOLIO</h2>
             <h1>Heitor Rafael B. Delfino</h1>
-            <p class="role">Software Developer</p>
-            <p class="former">Former Chef</p>
+            <p class="role" data-translate="role">Software Developer</p>
+            <p class="former" data-translate="former">Former Chef</p>
         </div>
         <div class="theme-controls">
+            <button class="theme-toggle">
+                <img src="/assets/LigthThemeIcon.png" alt="Trocar tema">
+                <span class="theme-text" data-translate="theme-button-text">Light</span>
+            </button>
             <button class="lang-toggle">
                 <img src="/assets/Hamburguer.png" alt="Trocar idioma">
-            </button>
-            <button class="theme-toggle">
-                <img src="/assets/Beer.png" alt="Trocar tema">
+                <span class="lang-text" data-translate="lang-button-text">Português</span>
             </button>
         </div>
 
@@ -132,12 +132,12 @@
                 <img src="/assets/SelfieChef.png" alt="Foto de Heitor">
             </div>
             <div class="about-content">
-                <h2>WHO AM I?</h2>
-                <p>
+                <h2 data-translate="about-title">WHO AM I?</h2>
+                <p data-translate="about-text">
                     Young professional in career transition, from kitchen management to the Systems Analysis and Development area, with strong experience in leadership and teamwork, seeking an internship to apply and develop technical knowledge in programming and technology. Proactive, detail-oriented and with proven problem-solving skills.
                 </p>
                 <div class="about-buttons">
-                    <a href="mailto:heitorbdelfino@gmail.com" class="contact-btn">Get in touch</a>
+                    <a href="mailto:heitorbdelfino@gmail.com" class="contact-btn" data-translate="contact">Get in touch</a>
                     <a href="https://www.linkedin.com/in/heitor-rafael-bezerra-delfino-129760187/" target="_blank" class="contact-btn linkedin">Linkedin</a>
                 </div>
             </div>
@@ -148,67 +148,65 @@
         <div class="resume-grid">
             <!-- Coluna do Currículo -->
             <div class="resume-container">
-                <h2>Resume</h2>
+                <h2 data-translate="resume-title">RESUME</h2>
                 <div class="resume-content">
                     <div class="resume-text">
-                        <h3>ACADEMIC EDUCATION</h3>
+                        <h3 data-translate="education-title">ACADEMIC EDUCATION</h3>
+                        <p data-translate="education1">Systems Analysis and Development - FATEC Praia Grande | 2023 - 2026</p>
+                        <p data-translate="education2">High School Nossa Senhora Consolata School - SP | Completion: 2013</p>
+
+                        <h3 data-translate="technical-title">TECHNICAL SKILLS</h3>
+                        <h4 data-translate="prog-lang-title">Programming Languages and Tools:</h4>
                         <ul>
-                            <li>Systems Analysis and Development - FATEC Praia Grande | 2023 - 2026</li>
-                            <li>High School Nossa Senhora Consolata School - SP | Completion: 2013</li>
+                            <li data-translate="prog-lang1">- Intermediate: HTML, CSS, JavaScript, Git, Java</li>
+                            <li data-translate="prog-lang2">- Currently studying: Node.js, Databases</li>
                         </ul>
 
-                        <h3>TECHNICAL SKILLS</h3>
-                        <h4>Programming Languages and Tools:</h4>
+                        <h4 data-translate="tech-title">Technologies and Software:</h4>
                         <ul>
-                            <li>- Intermediate: HTML, CSS, JavaScript, Git, Java</li>
-                            <li>- Currently studying: Node.js, Databases</li>
+                            <li data-translate="tech1">- GitHub for version control</li>
+                            <li data-translate="tech2">- Web Development (Front-end)</li>
+                            <li data-translate="tech3">- API Integration</li>
                         </ul>
 
-                        <h4>Technologies and Software:</h4>
+                        <h4 data-translate="office-title">Office Tools:</h4>
                         <ul>
-                            <li>- GitHub for version control</li>
-                            <li>- Web Development (Front-end)</li>
-                            <li>- API Integration</li>
+                            <li data-translate="office1">- Excel, Word, PowerPoint (Intermediate)</li>
                         </ul>
 
-                        <h4>Office Tools:</h4>
-                        <ul>
-                            <li>- Excel, Word, PowerPoint (Intermediate)</li>
-                        </ul>
-
-                        <h3>PROFESSIONAL EXPERIENCE</h3>
+                        <h3 data-translate="experience-title">PROFESSIONAL EXPERIENCE</h3>
                         <div class="job-experience">
-                            <h4>Head Chef - Beach Lounge | 01/2021 – 10/2023</h4>
-                            <p>Team leadership, kitchen operations coordination, supplier negotiations.
+                            <h4 data-translate="exp0-title">Head Chef - Beach Lounge | 01/2021 – 10/2023</h4>
+                            <p data-translate="exp0-desc">Team leadership, kitchen operations coordination, supplier negotiations.
                             Experience in management and working under pressure, transferable skills for project management and deadlines in technology.</p>
 
-                            <h4>Lead Chef - Santa Eliza ECO Resort | 07/2019 – 10/2020</h4>
-                            <p>Kitchen team leadership, input and inventory control. Development of organizational skills applicable to task and project management in IT.</p>
+                            <h4 data-translate="exp1-title">Lead Chef - Santa Eliza ECO Resort | 07/2019 – 10/2020</h4>
+                            <p data-translate="exp1-desc">Kitchen team leadership, input and inventory control. Development of organizational skills applicable to task and project management in IT.</p>
 
-                            <h4>Apprentice - São Paulo State Court of Justice – Santana Regional Forum | 01/2012 – 01/2013</h4>
-                            <p>Administrative support and public service. Process and documentation organization, experience that developed my attention to detail.</p>
+                            <h4 data-translate="exp2-title">Apprentice - São Paulo State Court of Justice – Santana Regional Forum | 01/2012 – 01/2013</h4>
+                            <p data-translate="exp2-desc">Administrative support and public service. Process and documentation organization, experience that developed my attention to detail.</p>
                         </div>
 
-                        <h3>LANGUAGES</h3>
+                        <h3 data-translate="languages-title">LANGUAGES</h3>
                         <ul>
-                            <li>- Portuguese: Native</li>
-                            <li>- English: Intermediate (ongoing)</li>
-                            <li>- Spanish: Basic</li>
+                            <li data-translate="lang1">- Portuguese: Native</li>
+                            <li data-translate="lang2">- English: Intermediate (ongoing)</li>
+                            <li data-translate="lang3">- Spanish: Basic</li>
                         </ul>
 
-                        <h3>ADDITIONAL COURSES</h3>
+                        <h3 data-translate="additional-title">ADDITIONAL COURSES</h3>
                         <ul>
-                            <li>- Higher Education in Gastronomy Technology | Hotec Educational Group | Completion: 2016</li>
-                            <li>- Sommelier (1st Module) | ABS (Brazilian Sommelier Association) | 2016</li>
-                            <li>- Web Development Technology Course | DevMedia | 2023</li>
-                            <li>- The Magic of Customer Service | H4T Consulting | 2019</li>
+                            <li data-translate="course1">- Higher Education in Gastronomy Technology | Hotec Educational Group | Completion: 2016</li>
+                            <li data-translate="course2">- Sommelier (1st Module) | ABS (Brazilian Sommelier Association) | 2016</li>
+                            <li data-translate="course3">- Web Development Technology Course | DevMedia | 2023</li>
+                            <li data-translate="course4">- The Magic of Customer Service | H4T Consulting | 2019</li>
                         </ul>
 
-                        <h3>ADDITIONAL QUALIFICATIONS</h3>
+                        <h3 data-translate="qualifications-title">ADDITIONAL QUALIFICATIONS</h3>
                         <ul>
-                            <li>- Flexible, ease in learning new areas of knowledge.</li>
-                            <li>- Experience working with deadlines and under pressure.</li>
-                            <li>- Proactivity and strong communication skills in multidisciplinary teams.</li>
+                            <li data-translate="qual1">- Flexible, ease in learning new areas of knowledge.</li>
+                            <li data-translate="qual2">- Experience working with deadlines and under pressure.</li>
+                            <li data-translate="qual3">- Proactivity and strong communication skills in multidisciplinary teams.</li>
                         </ul>
                     </div>
                 </div>
@@ -217,7 +215,7 @@
             <!-- Linguegens -->
             <div class="visual-elements">
                 <div class="languages-container">
-                    <img src="/assets/languagespace-4.png" alt="Languages proficiency" class="languages-img">
+                    <img src="/assets/LanguagesEnglishDark.png" alt="Languages">
                 </div>
             </div>
         </div>
