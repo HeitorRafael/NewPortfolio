@@ -1259,3 +1259,66 @@ body {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* Configurações base para todas as animações */
+[class*='fade-in'],
+[class*='slide-in'] {
+    opacity: 0;
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, opacity;
+}
+
+/* Variações de animações */
+.slide-in-left {
+    transform: translateX(-100px);
+}
+
+.slide-in-right {
+    transform: translateX(100px);
+}
+
+.slide-in-top {
+    transform: translateY(-100px);
+}
+
+/* Estado visível - comum para todas as animações */
+.visible {
+    opacity: 1;
+    transform: translate(0);
+}
+
+/* Transições para elementos interativos */
+.nav-menu a,
+.contact-btn,
+.project-card,
+.skill-item {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover effects */
+.nav-menu a:hover,
+.contact-btn:hover {
+    transform: translateY(-2px);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.skill-item:hover {
+    transform: scale(1.05);
+}
+
+/* Otimização para dispositivos que preferem menos movimento */
+@media (prefers-reduced-motion: reduce) {
+    [class*='fade-in'],
+    [class*='slide-in'],
+    .nav-menu a,
+    .contact-btn,
+    .project-card,
+    .skill-item {
+        transition: none;
+        transform: none;
+    }
+}

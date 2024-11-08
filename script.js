@@ -353,4 +353,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // Observar todos os elementos com animações
     const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .slide-in-top');
     animatedElements.forEach(el => observer.observe(el));
+
+    // Para elementos específicos
+    createObserver({
+        selector: '.my-custom-animation',
+        threshold: 0.2,
+        unobserveAfter: true
+    });
+
+    // Para animações em sequência
+    createObserver({
+        selector: '.sequence-animation',
+        threshold: 0.5
+    });
 });
